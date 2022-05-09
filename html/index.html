@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/firstScreen.css">
+    <link rel="stylesheet" href="../css/newsScreen.css">
+    <link rel="stylesheet" href="../css/cityScreen.css">
+    <link rel="stylesheet" href="../css/aboutScreen.css">
+    <script>
+        // 每次进来的时候，需要重新计算根元素的字体大小
+        (function () {
+            function setFont() {
+                var designWidth = 750; // 移动端设计稿宽度通常为750
+                // 设置根元素字体大小 = 视口宽度 / 设计稿宽度 * 100
+                document.documentElement.style.fontSize =
+                    (document.documentElement.clientWidth / designWidth) * 100 + 'px';
+            }
+            setFont();
+            window.addEventListener('resize', setFont);
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- 这是最外层的容器 -->
+    <div class="container">
+        <!-- 这个 div 是有用处的，后面讲遮罩的时候，会涉及到 -->
+        <div>
+
+            <!-- 首屏 -->
+            <div id="firstScreen">
+
+                <!-- 背景视频盒子 -->
+                <div>
+                    <!-- muted 静音 autoplay 自动播放 loop 无限循环 -->
+                    <video class="bgvideo" src="../assets/bgvideo.mp4" muted autoplay loop></video>
+                </div>
+
+                <!-- logo区域 -->
+                <!-- 因为后面 js 要操纵这个 h1 -->
+                <h1 class="logo" style="display: block;">
+                    <img src="../assets/logo1.png" alt="">
+                </h1>
+
+                <!-- 下方一系列信息，包括播放按钮、游戏下载、版权信息、下拉箭头 -->
+                <div id="posterMain">
+                    <!-- 播放按钮 -->
+                    <div class="playBtnContainer">
+                        <button class="playBtn">播放</button>
+                    </div>
+
+                    <!-- 游戏下载 -->
+                    <div class="downloadWrapper">
+                        <!-- 按钮组 -->
+                        <div class="btnGroup">
+                            <a href=""></a><a href=""></a>
+                        </div>
+
+                        <!-- 版权信息 -->
+                        <div class="txts">
+                            <p>开发者：上海米哈游天命科技有限公司</p>
+                            <p class="txtsBlock">
+                                <span>当前版本：1.6.0</span>
+                                <span>更新时间：2021.6.9</span>
+                            </p>
+                            <p class="txtsBlock">
+                                <a href="#">隐私协议</a>
+                                <a href="#">用户权限</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 下拉箭头 -->
+                    <div class="posterArrows">
+                        <div class="arrow arrow1"></div>
+                        <div class="arrow arrow2"></div>
+                        <div class="arrow arrow3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 新闻 -->
+            <div id="newsScreen">新闻</div>
+
+            <!-- 城市 -->
+            <div id="cityScreen">城市</div>
+
+            <!-- 关于我们 -->
+            <div id="aboutScreen">关于我们</div>
+
+            <!-- 页脚 -->
+            <div id="footerScreen">页脚</div>
+        </div>
+    </div>
+
+    <script src="../js/index.js"></script>
+</body>
+
+</html>
